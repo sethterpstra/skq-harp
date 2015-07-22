@@ -1,6 +1,7 @@
 {
   "globals": {
     "baseUrl": "",
-    "name": "Bootstrap boilerplate for Harp"
+    "name": "Sidekiq",
+    "year": "2015"
   }
 }

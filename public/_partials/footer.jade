@@ -1,11 +1,32 @@
-| Powered by
-= ' '
-a(href="https://github.com/jvandemo/hb-bootstrap") hb-bootstrap
-= ' '
-| for
-= ' '
-a(href="http://harpjs.com") Harp
-= ' '
-| by
-= ' '
-a(href="http://www.jvandemo.com") Jurgen Van de Moere
+.container-fluid
+	.row
+		.col-sm-7
+			h3.skq-footer-brand
+				= name
+				img.skq-award(src="http://placehold.it/50x50")
+		.col-xs-5 
+			img.skq-footer-logo(src="http://placehold.it/230x25")
+	hr
+	.row
+		.col-sm-2
+			a(href='#{baseUrl}/support') Support
+			br
+			a(href='https://github.com/mperham/sidekiq/wiki' target='_new') Wiki
+		.col-sm-2
+			a(href='#{baseUrl}/about') About
+			br
+			a(href='https://github.com/mperham/sidekiq/' target='_new') Source
+		.col-sm-3
+			a(href='https://twitter.com/sidekiq' target='_new') On Twitter
+			br
+			a(href='http://confreaks.com/videos/1290-rubyconf2012-asynchronous-processing-for-fun-and-profit' target='_new') At Rubyconf 2012
+		.col-sm-5
+			hr.visible-xs
+			small 
+				| Copyright &copy; 
+				= year 
+				= ' '
+				| Contributed Systems LLC.
+				br.hidden-xs
+				= ' '
+				| Made with care in Portland, OR.

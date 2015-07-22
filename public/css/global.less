@@ -13,14 +13,56 @@
 @import "themes/skq/theme";
 
 body{
-  padding-top: 70px;
+  padding-top: (@navbar-height + @grid-gutter-width);
+  -webkit-font-smoothing: antialiased; 
+}
+
+.skq-header{
+  padding: 0 (@grid-gutter-width * 1.25) 0;
 }
 
 footer{
+  .skq-header;
+  padding-top: 0;
+  padding-bottom: (@grid-gutter-width);
   margin: @grid-gutter-width 0 0 0;
-  padding: (@grid-gutter-width / 2) 0;
   border-top: 1px solid @well-border;
-  text-align: center;
+  text-align: left;
+  background-color: @gray;
+
+  hr{
+    border-color: @gray-dark;
+    margin-top: .75em;
+  }
+
+  a{
+    font-family: @headings-font-family;
+    line-height: 2em;
+    color: @gray-dark;
+
+    &:hover{ 
+      color: @gray-light;
+      text-decoration: none;
+    }
+  }
+
+  .skq-footer-brand{
+    font-family: @font-family-base;
+    color: @gray-darker;
+  }
+
+  .skq-footer-logo{
+    margin-top: 2.75em;
+  }
+
+  small{ 
+    font-family: @headings-font-family;
+    color: @gray-light;
+  }
+}
+
+.skq-award{
+  margin-left: .75em;
 }
 
 ul.nav-docs{
