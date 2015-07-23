@@ -1,6 +1,14 @@
-.container
-    .jumbotron
-        h1 Congratulations to you
-        p I review your application code in detail, offer advice on Sidekiq usage and potential problems, look for thread-safety issues or bottlenecks in your code and send you a report.
-        p
-            a.btn.btn-primary.btn-lg(href="#{baseUrl}/docs") View the documentation
+.container.skq-hero-area
+  .row
+    .col-sm-7
+      p.skq-hero-text What if <span class="skq-counter-number">1</span> Sidekiq process could do the job of <span class="skq-counter-number">20</span> Resque or DelayedJob processes?
+    .col-sm-5.rule-left
+      p.skq-quote <span class='floating-quotation'>"</span>Replacing Resque with Sidekiq reduced our job processing hardware cost by a factor of six."
+      .skq-quoted
+        <strong>Justin Mazzi</strong>, @jmazzi
+        br
+        | Chief of Engineering, Site5.com
+
+  .row
+    .col-sm-12
+      .jumbotron

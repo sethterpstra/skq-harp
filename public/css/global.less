@@ -21,6 +21,55 @@ body{
   padding: 0 (@grid-gutter-width * 1.25) 0;
 }
 
+.skq-hero-area{
+  margin: 0 auto;
+  padding: (@grid-gutter-width * 1.5) (@grid-gutter-width * .4);
+
+  [class*="col-"]{
+    padding: 0 (@grid-gutter-width * 1.5);
+  }
+}
+
+.skq-quote{
+  font-family: @headings-font-family;
+  font-size: 1.125em;
+  line-height: 1.75em;
+  color: @brand-primary;
+}
+
+.skq-quoted{
+  display: block;
+  margin-top: 1.5em;
+  font-family: @headings-font-family;
+  font-size: .9375em;
+  color: @gray-light;
+  line-height: 1.5em;
+}
+
+.floating-quotation{
+  display: inline-block;
+  margin-left: -.35em;
+}
+
+.rule-left{
+  height: 100%;
+  border-left: 1px solid @gray-lighter;
+}
+
+.skq-hero-text{
+  font-size: 1.75em;
+  line-height: 1.85em;
+
+  .skq-counter-number{
+    display: inline-block;
+    padding: .05em .5em;
+    background-color: #fff;
+    border-radius: 6px;
+    color: @brand-primary;
+    font-weight: bold;
+  }
+}
+
 footer{
   .skq-header;
   padding-top: 0;
@@ -31,7 +80,7 @@ footer{
   background-color: @gray;
 
   hr{
-    border-color: @gray-dark;
+    border-color: lighten(@gray-dark, 9%);
     margin-top: .75em;
   }
 
@@ -52,17 +101,26 @@ footer{
   }
 
   .skq-footer-logo{
-    margin-top: 2.75em;
+    margin-top: 3em;
+    width: auto;
+    height: 27px;
   }
 
   small{ 
     font-family: @headings-font-family;
     color: @gray-light;
+
+    a{ 
+      color: @gray-light;
+      &:hover { text-decoration: underline; }
+    }
   }
 }
 
 .skq-award{
   margin-left: .75em;
+  width: auto;
+  height: 50px;
 }
 
 ul.nav-docs{
