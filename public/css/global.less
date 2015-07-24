@@ -13,17 +13,23 @@
 @import "themes/skq/theme";
 
 body{
-  padding-top: (@navbar-height + @grid-gutter-width);
+  padding-top: (@navbar-height);
   -webkit-font-smoothing: antialiased; 
 }
 
+// HEADER
+
 .skq-header{
   padding: 0 (@grid-gutter-width * 1.25) 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
+
+// BODY
 
 .skq-hero-area{
   margin: 0 auto;
   padding: (@grid-gutter-width * 1.5) (@grid-gutter-width * .4);
+  padding-bottom: 0;
 
   [class*="col-"]{
     padding: 0 (@grid-gutter-width * 1.5);
@@ -44,6 +50,8 @@ body{
   font-size: .9375em;
   color: @gray-light;
   line-height: 1.5em;
+
+  a { color: @gray-light; }
 }
 
 .floating-quotation{
@@ -57,27 +65,170 @@ body{
 }
 
 .skq-hero-text{
-  font-size: 1.75em;
+  font-size: 1.85em;
   line-height: 1.85em;
 
   .skq-counter-number{
     display: inline-block;
-    padding: .05em .5em;
+    padding: .02em .5em;
     background-color: #fff;
+    border: 3px solid #f2f2f2;
     border-radius: 6px;
     color: @brand-primary;
     font-weight: bold;
   }
 }
 
+h3{ font-size: 2.2rem; }
+
+h3, h5{
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-weight: 700;
+}
+
+h5{
+  color: @gray-light;
+  margin-top: 3em;
+}
+
+.client-carousel {
+  width:100%;
+  margin-bottom: 4em;
+}
+.client-carousel-vertical {
+  height:260px;
+  width:135px;
+}
+
+.logo-list {
+  padding-left: 0;
+  margin: 0 0 0 -50px;
+
+  li img {
+    width: 82%;
+    height: auto;
+  }
+}
+
+.client-carousel li {
+  color:#666; 
+  float:left;
+  font-weight:bold;
+  font-size:3em;
+  height:auto;
+  list-style:none;
+  padding:20px 0 0 0;
+  margin:0 5px 0 0;
+  text-align:center;
+  width:180px;
+}
+.client-carousel-vertical li {
+  margin:0 0 10px 0;
+}
+
+.skq-cols{
+  margin-top: 3em;
+}
+
+[class*="skq-col-"]{
+  padding: @grid-gutter-width (@grid-gutter-width * 1.5);
+  min-height: 600px;
+
+  p { 
+    margin-top: 1em;
+    font-size: 1.25em;
+  }
+
+  ul { 
+    list-style: none;
+    padding-left: 2em;
+    margin-top: 2em;
+   }
+  li {
+    position: relative;
+    margin: .75em 0;
+    padding-bottom: .5em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    color: lighten(@gray, 10%);
+
+    .glyphicon {
+      position: absolute;
+      left: -2em;
+      top: .25em;
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+
+  li, small{ 
+    color: lighten(@gray, 5%);
+    font-size: 1.4rem;
+    line-height: 1.5em;
+  }
+}
+
+.skq-col-left { 
+  background-color: #ddd;
+  h3, .glyphicon{ color: #69952f; }
+}
+
+.skq-col-center { 
+  background-color: lighten(@gray-light, 20%);
+
+  h3, .glyphicon, a{ color: #00558d; }
+}
+
+.skq-col-right { 
+  background-color: lighten(@gray, 40%);
+
+  h3, .glyphicon, a{ color: @brand-primary; }
+}
+
+.skq-support-copy {
+  padding: 0 (@grid-gutter-width * 1.5);
+
+  p, ul {
+    margin-top: 1.25em;
+    font-size: .85em;
+    line-height: 1.85em;
+  }
+
+  h3{ margin-top: 2em; }
+
+  li{ margin-top: .5em; }
+}
+
+// FOOTER
+
+.skq-subfooter{
+  text-align: center;
+  background-color: #ddd;
+  border: none;
+  padding-top: @grid-gutter-width;
+  margin: 0;
+
+  a{
+    margin-left: 1em;
+    padding: .75em 1em; 
+    background-color: transparent;
+    border-radius: 3px;
+    border: 2px solid @brand-primary;
+    color: @brand-primary;
+  }
+}
+
 footer{
   .skq-header;
-  padding-top: 0;
-  padding-bottom: (@grid-gutter-width);
-  margin: @grid-gutter-width 0 0 0;
+  padding-top: (@grid-gutter-width * 0.5);
+  padding-bottom: @grid-gutter-width;
+  margin: 0;
   border-top: 1px solid @well-border;
   text-align: left;
   background-color: @gray;
+  box-shadow: none;
 
   hr{
     border-color: lighten(@gray-dark, 9%);
@@ -96,12 +247,13 @@ footer{
   }
 
   .skq-footer-brand{
+    font-size: 2em;
     font-family: @font-family-base;
     color: @gray-darker;
   }
 
   .skq-footer-logo{
-    margin-top: 3em;
+    margin-top: 2em;
     width: auto;
     height: 27px;
   }

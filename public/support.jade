@@ -1,0 +1,79 @@
+.container.skq-hero-area
+  .skq-hero-text.center-text Get support directly from the Sidekiq expert.
+.container.no-margin
+  .row.skq-cols
+    .col-sm-4.skq-col-left 
+      h3 Happy Hour
+      p Video chat about Sidekiq and ask questions.
+      ul
+        li 
+          span.glyphicon.glyphicon-tag
+          | FREE
+        li 
+          span.glyphicon.glyphicon-time
+          | Friday, 9-10am Pacific every week
+        li
+          span.glyphicon.glyphicon-user
+          | Open to the Public
+        li
+          span.glyphicon.glyphicon-facetime-video
+          | Click here to join. Make sure your camera is on and wear headphones. Only works in Chrome and Firefox.
+    .col-sm-4.skq-col-center
+      h3 Tune-up
+      p Tune your application for Sidekiq.
+      p
+        small I review your application code in detail, offer advice on Sidekiq usage and potential problems, look for thread-safety issues or bottlenecks in your code and send you a report.
+      ul
+        li 
+          span.glyphicon.glyphicon-question-sign
+          | More questions? See 
+          a(href='#faqs') FAQs
+          |  below
+        li 
+          span.glyphicon.glyphicon-time
+          | Friday, 9-10am Pacific every week
+        li
+          span.glyphicon.glyphicon-send
+          a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Tune-up' type='button') Email to arrange your tune-up
+    .col-sm-4.skq-col-right
+      h3 Custom Work or Support
+      p Tweak Sidekiq to meet specific requirements.
+      ul
+        
+        li 
+          span.glyphicon.glyphicon-question-sign
+          | More questions? See 
+          a(href='#faqs') FAQs
+          |  below
+        li
+          span.glyphicon.glyphicon-send
+          a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Custom%20Work%20or%20Support' type='button') Email to discuss details
+
+.container.skq-white-bg#faqs
+  h5 FAQs
+  hr
+  .row
+    .col-sm-6.skq-support-copy
+      h3 What's happy hour?
+      p Happy Hour is a chance for you to talk with me about any questions you have around Ruby, background jobs, threading, Sidekiq or any other related subject. It's free of charge and open to the public so you might have to share the time with others.
+      p I encourage enjoying a tasty beverage during Happy Hour. I'll stick to coffee at 9am but I understand it's 5pm somewhere. Note the video chat site only works in newer versions of Chrome, Firefox and Opera.
+      p <strong>A/V tips</strong>: <strong>use headphones</strong> to avoid speaker echo and <strong>use Ethernet</strong> if possible to avoid wifi lag and drops.
+      p If you want to arrange a private chat, that would be considered Custom Support and priced accordingly. Email me with your needs.
+
+      h3 What's Tune-up?
+      p Integrating Sidekiq and ensuring it is properly tuned in all cases can be difficult. You grant me access to your GitHub repo and I'll audit your application code for proper Sidekiq configuration, correct Redis and memcached usage and connection pooling, and any threading or exception handling issues.
+      p Pricing is based on your application's Ruby LOC, as calculated by cloc <code>brew install cloc; cloc app lib</code> in your Rails app. $750 for each 10k runtime LOC, rounded up ($1500 for up to 20k, etc). Double the price if you want your application's runtime gems to receive the same audit. Each 20k LOC takes a full day to audit. Let me know in your email if you have specific areas of concern or have some code that unfairly inflates the price (e.g. auto-generated code), I'd be happy to adjust accordingly. You will receive a Net 15 invoice and email report once your Tuneup audit is complete.
+      p <strong>Note</strong>: I consider all code reviewed to be under NDA. I would never keep or share any application code. Once you approve of the report and acknowledge receipt of the invoice I delete your application source from my machine.
+
+    .col-sm-6.skq-support-copy
+      h3 How does Custom Support work?
+      p Email me with a summary of your needs; I'll help you if I can. I might:
+      ul
+        li Give you an estimate of time and price if the work is straightforward
+        li Suggest alternatives that might not require Sidekiq
+        li Decline the work due to timing or relevancy
+        li Note that work must be Sidekiq related. I don't accept general Rails or Ruby development work. My contracting price is $250/hour or $1500/day.
+      h3 Who are you?
+      p I'm Mike Perham, I've been doing Ruby and Rails development for 8 years and I'm the primary author of Sidekiq. For the past few years I've helped thousands of people with their Sidekiq issues. Sales of Sidekiq Pro and these support services feed my family.
+
+!= partial('_partials/subfooter')
