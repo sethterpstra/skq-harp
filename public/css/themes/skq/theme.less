@@ -35,10 +35,22 @@ body{
 }
 
 .skq-tagline{
+	white-space: nowrap;
 	font-family: @headings-font-family;
 	color: @gray-light !important;
-	margin-top: -0.2em;
+	line-height: 1.25em;
+	margin-top: -0.8em;
 	max-width: 350px;
+}
+
+.nav-mini {
+	transition: background-color 250 ease-in-out;
+	-webkit-transition: background-color 250 ease-in-out;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+.skq-nav-link {
+	margin-top: 0.8em;
 }
 
 .navbar-right{
@@ -49,7 +61,7 @@ body{
 }
 
 .skq.navbar-brand {
-	font-size: (@font-size-h1 * 1.15);
+	font-size: 47px;
 	color: @brand-primary;
 }
 
@@ -57,5 +69,3 @@ body{
 	margin: 0;
 	width: 100%;
 }
-
-.center-text{ text-align: center; }
