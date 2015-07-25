@@ -6,11 +6,9 @@ nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.skq.navbar-brand(href="#{baseUrl}/")= name
-    span.skq-tagline.navbar-brand.col-sm-5.hidden-xs 
-      | Simple, efficient background
-      br
-      | processing for Ruby.
+      a.skq.navbar-brand(href="#{baseUrl}/") Sidekiq
+    span(class='#{tagline}').skq-tagline.navbar-brand.col-sm-5.hidden-xs
+      = taglinecopy
 
     .collapse.navbar-collapse#navbar-top-collapse-1
       ul.nav.navbar-nav.navbar-right

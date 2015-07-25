@@ -15,6 +15,7 @@
 body{
   padding-top: (@navbar-height);
   -webkit-font-smoothing: antialiased; 
+  min-width: 0;
 }
 
 // HEADER
@@ -30,18 +31,49 @@ body{
     width: 30%;
   }
   .skq {
+    font-size: 25px !important;
     // transform: scale(0.5,0.5);
+  }
+  .skq-header {
+    padding: 0 (@grid-gutter-width * 0.75) 0;
+  }
+  .navbar-right a {
+    font-size: 0.9em;
   }
 }
 
 .skq-tagline{
-  white-space: nowrap;
-  font-family: @headings-font-family;
-  color: @gray-light !important;
-  line-height: 1.25em;
   margin-top: -0.8em;
-  max-width: 350px;
+  padding-left: 20px;
+  width: 300px;
+  font-family: @headings-font-family;
+  font-size: 1.1em;
+  line-height: 1.3em;
+  color: @gray-light;
+
+  &.pro,
+  &.enterprise {
+    margin-top: -12px;
+    color: #000;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 700;
+  }
+
+  &.enterprise {
+    margin-top: -20px;
+    font-size: 1.25em;
+  }
 }
+
+// .skq-tagline:before {
+//   content: 'Simple,\ efficient background processing for Ruby.'
+// }
+
+// .skq-tagline.pro:before {
+//     content: 'Pro';
+// }
 
 .nav-mini {
   transition: background-color 250 ease-in-out;
@@ -50,12 +82,10 @@ body{
   height: 50px;
 }
 
-.skq-nav-link {
-  margin-top: 0.8em;
-}
-
 .navbar-right{
-  .skq-tagline();
+  font-size: 1.1em;
+  line-height: 1.25em;
+  font-family: @headings-font-family;
   text-transform: uppercase;
   letter-spacing: .1em;
   font-weight: 700;
@@ -70,11 +100,11 @@ body{
 
 .skq-hero-area{
   margin: 0 auto;
-  padding: (@grid-gutter-width * 1.5) (@grid-gutter-width * .4);
+  padding: (@grid-gutter-width * 2.5) 0;
   padding-bottom: 0;
 
   [class*="col-"]{
-    padding: 0 (@grid-gutter-width * 1.5);
+    padding: 0 (@grid-gutter-width * 2);
   }
 }
 
@@ -121,6 +151,17 @@ body{
   }
 }
 
+.spacer {
+  float: left;
+  width: 100%;
+  margin: (@grid-gutter-width * 1.25) 0;
+}
+
+.spacer-lg {
+  .spacer;
+  margin: (@grid-gutter-width * 3) 0;
+}
+
 h3{ font-size: 2.2rem; }
 
 h3, h5{
@@ -132,6 +173,13 @@ h3, h5{
 h5{
   color: @gray-light;
   margin-top: 3em;
+}
+
+h6 {
+  margin: 1em 0;
+  font-family: @font-family-base;
+  font-size: 1.5em;
+  line-height: 1.3em;
 }
 
 .client-carousel {
@@ -229,6 +277,20 @@ h5{
   h3, .glyphicon, a{ color: @brand-primary; }
 }
 
+.skq-copy {
+  padding: 0 (@grid-gutter-width * 1.5);
+
+  p {
+    margin-top: 1.25em;
+    font-size: .85em;
+    line-height: 1.85em;
+  }
+}
+
+.skq-copy-img {
+  padding: (@grid-gutter-width);
+}
+
 .skq-support-copy {
   padding: 0 (@grid-gutter-width * 1.5);
 
@@ -280,7 +342,7 @@ img.icon{
   text-align: center;
   background-color: #ddd;
   border: none;
-  padding-top: @grid-gutter-width;
+  padding-top: (@grid-gutter-width * 1.5);
   margin: 0;
 
   a{
@@ -297,8 +359,8 @@ img.icon{
 
 footer{
   .skq-header;
-  padding-top: (@grid-gutter-width * 0.5);
-  padding-bottom: @grid-gutter-width;
+  padding-top:   (@grid-gutter-width * 1.5);
+  padding-bottom:(@grid-gutter-width * 1.5);
   margin: 0;
   border-top: 1px solid @well-border;
   text-align: left;
@@ -322,7 +384,7 @@ footer{
   }
 
   .skq-footer-brand{
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: @font-family-base;
     color: @gray-dark;
   }

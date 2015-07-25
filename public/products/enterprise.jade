@@ -1,0 +1,128 @@
+.container.skq-hero-area
+  .row
+    .col-sm-7
+      p.skq-hero-text Join <span class="skq-counter-number">100+</span> large companies who have upgraded to Sidekiq Enterprise!
+    .col-sm-5.rule-left
+      p.skq-quote <span class='floating-quotation'>"</span>Sidekiq let us stop worrying about queues and focus on our app. Half a billion jobs later and it's holding up great."
+      .skq-quoted
+        <strong>Bryan Helmkamp</strong>, @brynary
+        br
+        | Co-Founder, 
+        a(href='http://codeclimate .com/' target='_new') Code Climate
+
+.container.skq-copy
+  .spacer
+  h5 Key Features
+  hr
+  .row
+    .col-sm-7
+      h3 Reliability
+      h6 More reliable message processing.
+      p Cloud environments are noisy and unreliable. Seeing timeouts? Wild swings in latency or performance? Ruby VM crashes or processes disappearing?
+      p If a Sidekiq Enterprisecess crashes while processing a job, that job is lost.
+      p If the Sidekiq client gets a networking error while pushing a job to Redis, an exception is raised and the job is not delivered.
+      p Sidekiq Enterprise uses Redis's RPOPLPUSH command to ensure that jobs will not be lost if the process crashes or gets a KILL signal.
+      p The Sidekiq Enterprise client can withstand transient Redis outages or timeouts. It will enqueue jobs locally upon error and attempt to deliver those jobs once connectivity is restored.
+
+    .col-sm-5
+      .spacer
+      img.skq-copy-img.img-responsive(src='#{baseUrl}/img/reliability.png')
+  hr
+  .row
+    .col-sm-7
+      h3 Batches
+      h6 Group jobs into a set and follow their progress.
+      p Create a set of jobs which can be tracked as a group, programmatically or within the Sidekiq Web interface. You can see success and failure counts along with error information for failed jobs within the batch.
+      p We use batches at 
+        a(target='_new', href='http://www.theclymb.com/invite-from/mperham') The Clymb
+        |  when uploading product catalogs to our database. Each product becomes a job, uploading 1000 products makes 1000 jobs, which are quickly processed by our swarm of Sidekiq workers. Once finished, the catalog team is notified of the results.
+
+    .col-sm-5
+      .spacer
+      img.skq-copy-img.img-responsive(src='#{baseUrl}/img/batch.png')
+  hr
+  .row
+    .col-sm-7
+      h3 notifications
+      h6 Receive notification via several different mediums when a batch completes.
+      p
+        strong Are you a human? 
+        | Receive an email, Campfire or HipChat notification when a batch has completed processing.
+      p
+        strong Are you a robot?
+        |  Receive a webhook or in-process callback when the batch is complete. Use Redis pub/sub to receive 
+        strong real-time
+        |  updates as your batch processes.
+      p Your own custom notification mechanisms can easily be added with Sidekiq Enterprise's Batch callback API.
+
+    .col-sm-5
+      .spacer
+      img.skq-copy-img.img-responsive(src='#{baseUrl}/img/webhook.png')
+  hr
+  .row
+    .col-sm-7 
+      h3 Support
+      h6 Priority support from the author of Sidekiq.
+      p Background processing is a major component of your application. Guarantee direct access to a Sidekiq expert. Your Sidekiq Enterprise subscription gives you priority support for an unforesee issues.
+      
+
+    .col-sm-5
+      .spacer
+      img.skq-copy-img.img-responsive(src='#{baseUrl}/img/support.png')
+  .spacer
+
+.container.skq-white-bg
+  .spacer
+  h5 Product Details
+  hr
+  .row
+    .col-sm-6.skq-support-copy
+      h3 Features
+      p Sidekiq Enterprise contains the following functionality:
+      ul
+        li Enable more complex job workflows with Batches and Callbacks
+        li Better server reliability in the face of Ruby VM crashes
+        li Better client reliability in the face of Redis networking problems
+        li Pause queues (e.g. only process a queue during business hours)
+        li Expire unprocessed jobs after a deadline
+        li Send job processing metrics to Statsd
+        li High performance API extensions using Redis's Lua support
+        li Search for jobs in the Web UI
+
+      h3 Documentation
+      p Detailed documentation about configuring and using each Pro feature can be found in the 
+        a(target='_new', href='https://github.com/mperham/sidekiq/wiki#sidekiq-pro') Sidekiq wiki
+        | . Read the 
+        a(target='_new', href='https://github.com/mperham/sidekiq/wiki/Pro-FAQ') Sidekiq Enterprise FAQ
+        |  for further detail.
+
+      h3 Support
+      p Your Sidekiq Enterprise subscription gives you priority email support for any issues which might arise.
+      p Sales of Sidekiq Enterprise also benefit the community by ensuring that Sidekiq itself will remain well supported for the foreseeable future.
+
+    .col-sm-6.skq-support-copy
+      h3 Installation
+      p When you buy Sidekiq Enterprise, a custom URL associated with your email address will be sent to you. You add this URL to your Gemfile and everything else is seamless. You configure and use Sidekiq Enterprise exactly like you would Sidekiq.
+      p <strong>Pro tip:</strong> use a mailing list for your email when purchasing to ensure you get critical email updates, even if employees leave the company.
+
+      h3 Upgrades
+      p Sidekiq Enterprise will receive bug fixes and new functionality over time. All upgrades will be free to customers with a simple <code>bundle update sidekiq-ent</code>. See the 
+        a(target="_blank" href="https://github.com/mperham/sidekiq/blob/master/Pro-Changes.md") changelog 
+        | for more detail.
+
+      h3 Licensing
+      p Sidekiq is available under the terms of the GNU 
+        a(target="_new" href="http://www.gnu.org/copyleft/lesser.html") LGPLv3 
+        | license.
+      p In addition to its useful functionality, buying Sidekiq Enterprise grants your organization a Sidekiq commercial license instead of the GNU LGPL, avoiding any legal issues your lawyers might raise.  Please see the 
+        a(target='_new', href='https://github.com/mperham/sidekiq/wiki/Pro-FAQ') Sidekiq Enterprise FAQ 
+        | for further detail on licensing including options for distributing Sidekiq Enterprise with your own products.
+
+  .row
+    .col-sm-12.skq-support-copy
+      .spacer-lg
+      h5 Trusted By
+      hr
+.skq-white-bg.no-margin.no-padding
+  != partial('../_partials/logo-carousel')
+!= partial('../_partials/subfooter')

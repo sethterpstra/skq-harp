@@ -1,0 +1,13 @@
+{
+	"pro": {
+			"baseUrl": "..",
+	    "name": "Sidekiq Pro",
+	    "tagline": "pro",
+	    "taglinecopy": "Pro"
+	},
+	 "enterprise": {
+			"baseUrl": "..",
+	 		"tagline": "enterprise",
+	 		"taglinecopy": "Enterprise"
+	}
+}
