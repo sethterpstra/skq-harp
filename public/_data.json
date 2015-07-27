@@ -1,5 +1,9 @@
 {
 	"support": {
 	    "name": "Sidekiq Support"
-	  }	
+	},
+  "index": {
+      "layout": "_layout-home",
+      "javascript": "skq-home"
+  }	
 }

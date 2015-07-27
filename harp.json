@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "name": "Sidekiq",
     "year": "2015",
-    "tagline": "",
-    "taglinecopy": "Simple, efficient background processing for Ruby."
+    "tagline": "default",
+    "taglinecopy": "Simple, efficient background processing for Ruby.",
+    "javascript": "skq-global"
   }
 }

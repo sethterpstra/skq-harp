@@ -1,58 +1,60 @@
 .container.skq-hero-area
   .skq-hero-text.text-center Get support directly from the Sidekiq expert.
-.container.no-margin
-  .row.skq-cols
-    .col-sm-4.skq-col-left 
-      h3 Happy Hour
-      p Video chat about Sidekiq and ask questions.
-      ul
-        li 
-          span.glyphicon.glyphicon-usd
-          | FREE
-        li 
-          span.glyphicon.glyphicon-time
-          | Friday, 9-10am Pacific every week
-        li
-          span.glyphicon.glyphicon-user
-          | Open to the Public
-        li
-          span.glyphicon.glyphicon-facetime-video
-          | Click here to join. Make sure your camera is on and wear headphones. Only works in Chrome and Firefox.
-    .col-sm-4.skq-col-center
-      h3 Tune-up
-      p Tune your application for Sidekiq.
-      p
-        small I review your application code in detail, offer advice on Sidekiq usage and potential problems, look for thread-safety issues or bottlenecks in your code and send you a report.
-      ul
-        li 
-          span.glyphicon.glyphicon-question-sign
-          | More questions? See 
-          a(href='#faqs') FAQs
-          |  below
-        li 
-          span.glyphicon.glyphicon-time
-          | Friday, 9-10am Pacific every week
-        li
-          span.glyphicon.glyphicon-send
-          a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Tune-up' type='button') Email to arrange your tune-up
-    .col-sm-4.skq-col-right
-      h3 Custom Work or Support
-      p Tweak Sidekiq to meet specific requirements.
-      ul
-        li 
-          span.glyphicon.glyphicon-usd
-          | $1500 / hour
-        li 
-          span.glyphicon.glyphicon-question-sign
-          | More questions? See 
-          a(href='#faqs') FAQs
-          |  below
-        li
-          span.glyphicon.glyphicon-send
-          a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Custom%20Work%20or%20Support' type='button') Email to discuss details
+.row.skq-cols.no-margin
+  .col-sm-4.skq-col-left 
+    img.skq-support-img(src='#{baseUrl}/img/support-01.png')
+    h3 Happy Hour
+    p Video chat about Sidekiq and ask questions.
+    ul
+      li 
+        span.glyphicon.glyphicon-usd
+        | FREE
+      li 
+        span.glyphicon.glyphicon-time
+        | Friday, 9-10am Pacific every week
+      li
+        span.glyphicon.glyphicon-user
+        | Open to the Public
+      li
+        span.glyphicon.glyphicon-facetime-video
+        | Click here to join. Make sure your camera is on and wear headphones. Only works in Chrome and Firefox.
+  .col-sm-4.skq-col-center
+    img.skq-support-img(src='#{baseUrl}/img/support-02.png')
+    h3 Tune-up
+    p Tune your application for Sidekiq.
+    p
+      small I review your application code in detail, offer advice on Sidekiq usage and potential problems, look for thread-safety issues or bottlenecks in your code and send you a report.
+    ul
+      li 
+        span.glyphicon.glyphicon-question-sign
+        | More questions? See 
+        a.jump-link(href='#faqs') FAQs
+        |  below
+      li 
+        span.glyphicon.glyphicon-time
+        | Friday, 9-10am Pacific every week
+      li
+        span.glyphicon.glyphicon-send
+        a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Tune-up' type='button') Email to arrange your tune-up
+  .col-sm-4.skq-col-right
+    img.skq-support-img(src='#{baseUrl}/img/support-03.png')
+    h3 Custom Work or Support
+    p Tweak Sidekiq to meet specific requirements.
+    ul
+      li 
+        span.glyphicon.glyphicon-usd
+        | $1500 / hour
+      li 
+        span.glyphicon.glyphicon-question-sign
+        | More questions? See 
+        a.jump-link(href='#faqs') FAQs
+        |  below
+      li
+        span.glyphicon.glyphicon-send
+        a(href='mailto:mike@contribsys.com?subject=Sidekiq%20Custom%20Work%20or%20Support' type='button') Email to discuss details
 
 .container.skq-white-bg#faqs
-  .spacer
+  .spacer-md
   h5 FAQs
   hr
   .row

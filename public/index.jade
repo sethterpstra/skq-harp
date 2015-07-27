@@ -3,17 +3,14 @@
     .col-sm-7
       p.skq-hero-text What if <span class="skq-counter-number">1</span> Sidekiq process could do the job of <span class="skq-counter-number">20</span> Resque or DelayedJob processes?
     .col-sm-5.rule-left
-      p.skq-quote <span class='floating-quotation'>"</span>Replacing Resque with Sidekiq reduced our job processing hardware cost by a factor of six."
-      .skq-quoted
-        <strong>Justin Mazzi</strong>, @jmazzi
-        br
-        | Chief of Engineering, 
-        a(href='http://site5.com/' target='_new') Site5.com
-
+      != partial('_partials/quote-carousel')
   .row
     .col-sm-12
       h5 Trusted By
       hr
-
 != partial('_partials/logo-carousel')
+
+!= partial("_partials/tab-nav")  
+!= partial("_partials/comparison-chart")  
+
 != partial('_partials/subfooter')
