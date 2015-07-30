@@ -12,6 +12,8 @@
 // Import flat bootstrap theme
 @import "themes/skq/theme";
 
+@transition-time: 300ms;
+
 body{
   padding-top: (@navbar-height);
   -webkit-font-smoothing: antialiased; 
@@ -408,9 +410,25 @@ h6 {
   position: relative;
 }
 
+.charts-wrapper {
+  width: 95%;
+  height: 75vh;
+  overflow: hidden;
+}
+
 .comparison-chart {
   transition: all .25s ease;
-  position: static;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  padding: 30px 0 0;
+  z-index: 1;
+
+  .row { 
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
   ul { float: right; }
   ul li:first-child { border-bottom-width: 2px !important; }
   ul li:last-child { border-bottom: 0 !important; }
@@ -420,8 +438,8 @@ h6 {
 
   .key,
   [class*=panel-] {
-    width: 30%;
-    margin: 0 0 0 -10px;
+    height: 75vh;
+    margin: 0 0 0;
     padding: 0;
     list-style: none;
     text-align: right;
@@ -429,14 +447,23 @@ h6 {
     font-family: @headings-font-family;
     font-size: .75em;
     letter-spacing: .1em;
+    transition: all @transition-time ease;
 
     li {
-      height: 36px;
-      padding: .8em;
+      height: 6.25%;
+      min-height: 36px;
+      padding: 6% .8em .8em;
       border-bottom: 1px solid rgba(255,255,255,0.15);
       white-space: nowrap;
       color: @gray;
     }
+  }
+
+  .key {
+    width: 27.5%;
+  }
+  [class*=panel-] {
+    width: 32%;
   }
 
   .panel-1,
@@ -450,7 +477,7 @@ h6 {
     border-radius: 4px;
 
     li { 
-      padding: .5em;
+      padding: 5% .5em .5em;
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.15);
     }
@@ -458,8 +485,8 @@ h6 {
 
   .panel-2.panel-inactive {
     background-color: #ccc;
-    padding: 5px 0;
-    margin-top: -5px; 
+    // padding: 5px 0;
+    // margin-top: -5px; 
   }
 
   .panel-inactive {
@@ -470,22 +497,22 @@ h6 {
 
   .panel-active {
     margin-left: 0;
-    margin-top: -10px;
-    padding: 10px 0;
+    // margin-top: -10px;
+    // padding: 10px 0;
     background-color: #eee;
   }
 }
 
 .comparison-chart.fixed-mode {
   position: fixed;
-  width: 65%;
-  top: 160px;
-  left: 10px;
+  top: 110px;
+  left: 0px;
   z-index: 90;
 }
 
 .prompt {
   position: absolute;
+  left: 0;
   bottom: 0;
   width: 100%;
   margin: 0 -10px;
@@ -496,6 +523,7 @@ h6 {
   text-transform: uppercase;
   letter-spacing: .1em;
   color: @gray;
+  z-index: 91;
 
   &:hover {
     text-decoration: none !important;
@@ -504,8 +532,9 @@ h6 {
 }
 
 .skq-copy-2 {
-  max-width: 300px;
-  margin-top: 40%;
+  width: 85%;
+  max-width: 400px;
+  margin-top: 33vh;
   color: @gray-darker;
   p {
     margin: 1em 0 1.75em;

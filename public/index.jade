@@ -11,6 +11,42 @@
 != partial('_partials/logo-carousel')
 
 != partial("_partials/tab-nav")  
-!= partial("_partials/comparison-chart")  
+
+.comparison-chart
+  .row
+    .col-sm-8
+      != partial("_partials/comparison-chart")
+    .col-sm-4
+
+    a.prompt.hidden-xs(href='#enterprise') Running a large company?
+    a.prompt.hidden-xs(href='#pro') Need functionality built for business?      
+
+#oss.container.skq-chart-area-1.no-margin
+  .row
+    .col-sm-8
+    .col-sm-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='https://github.com/mperham/sidekiq/' target='_new') Take me to GitHub
+
+#pro.container.skq-chart-area-2.no-margin    
+  .row
+    .col-sm-8
+    .col-sm-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/pro') Learn more &amp; Buy
+
+#enterprise.container.skq-chart-area-3.no-margin
+  .row
+    .col-sm-8
+    .col-sm-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/enterprise') Learn more &amp; Buy
+
 
 != partial('_partials/subfooter')

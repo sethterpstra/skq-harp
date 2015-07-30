@@ -1,15 +1,22 @@
 $(document).ready(function() {
 
 	var body = $('html, body');
+  var windowHeight = $(window).height()
+  var subFooterOffset = $('.skq-subfooter').offset();
 
 	// $(body).scrollTop(0);
 	sizeChartArea();
   setCarouselHeight('#carousel');
 
-  function sizeChartArea() {
-    var windowHeight = $(window).height()
+  function sizeChartArea() {    
     $('.skq-chart-area-1, .skq-chart-area-2, .skq-chart-area-3').css({'height' : (windowHeight)});
-    $('.comparison-chart').css({'height' : (windowHeight-200)})
+    $('.comparison-chart').css({'height' : (windowHeight-120)})
+  }
+
+  function handleChartArea() {
+    if ((document.body.scrollTop) == (subFooterOffset+windowHeight)) { console.log('hello') }
+      console.log(document.body.scrollTop);
+    console.log((subFooterOffset));
   }
 
   $('#logo-carousel').scrollingCarousel({
@@ -49,7 +56,13 @@ $(document).ready(function() {
 
   $(window).scroll(function(){
     dockTabNav();
-    // console.log('scrolltop '+document.body.scrollTop);
+    handleChartArea();
+    // console.log(($('.skq-subfooter').offset().top));
+    // console.log(document.body.scrollTop);
+  });
+
+  $(window).resize(function(){
+    sizeChartArea();
   });
 
 });
