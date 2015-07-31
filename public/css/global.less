@@ -380,18 +380,28 @@ h6 {
   transform: rotate(45deg);
 }
 
-.skq-tab-left,
-.skq-chart-area-1 {
+#oss, #pro, #enterprise {
+  transition: background-color @transition-time ease;
+  background-color: #aaa;
+
+  // Fade transition
+  // .viewing-oss & { background-color: #aaa; }
+  // .viewing-pro & { background-color: @gray-darker; }
+  // .viewing-ent & { background-color: darken(@brand-primary, 10%); }
+}
+
+#pro { background-color: @gray-darker; }
+#ent { background-color: darken(@brand-primary, 10%); }
+
+.skq-tab-left {
   background-color: #aaa;
 }
 
-.skq-tab-center,
-.skq-chart-area-2 {
+.skq-tab-center {
   background-color: @gray-darker;
 }
 
-.skq-tab-right,
-.skq-chart-area-3 {
+.skq-tab-right {
   background-color: darken(@brand-primary, 10%);
 }
 
@@ -412,12 +422,12 @@ h6 {
 
 .charts-wrapper {
   width: 95%;
-  height: 75vh;
-  overflow: hidden;
+  height: 80vh;
+  min-height: 580px;
 }
 
 .comparison-chart {
-  transition: all .25s ease;
+  // transition: all .25s ease;
   position: absolute;
   left: 0px;
   width: 100%;
@@ -438,7 +448,6 @@ h6 {
 
   .key,
   [class*=panel-] {
-    height: 75vh;
     margin: 0 0 0;
     padding: 0;
     list-style: none;
@@ -447,23 +456,32 @@ h6 {
     font-family: @headings-font-family;
     font-size: .75em;
     letter-spacing: .1em;
-    transition: all @transition-time ease;
+    transition: background-color @transition-time ease;
 
     li {
-      height: 6.25%;
       min-height: 36px;
-      padding: 6% .8em .8em;
+      padding: 10px 1em;
       border-bottom: 1px solid rgba(255,255,255,0.15);
       white-space: nowrap;
       color: @gray;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color @transition-time ease;
     }
   }
 
   .key {
     width: 27.5%;
+    height: 100%;
+    padding: 8px 0;
+    li { 
+      .viewing-pro &,
+      .viewing-ent & { color: @gray-lighter; }
+    }
   }
+
   [class*=panel-] {
-    width: 32%;
+    width: 100%;
   }
 
   .panel-1,
@@ -471,35 +489,48 @@ h6 {
   .panel-3 {
     text-transform: none;
     letter-spacing: 0;
-    font-size: .9em;
-    margin-left: 0;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    font-size: 1.2em;
+    margin: 0 0 0 0;
+    padding: 8px 0;
     border-radius: 4px;
+    border: none;
 
     li { 
-      padding: 5% .5em .5em;
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.15);
     }
   }
 
-  .panel-2.panel-inactive {
-    background-color: #ccc;
-    // padding: 5px 0;
-    // margin-top: -5px; 
+  .panel-mask {
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 32%;
+    float: right;
   }
 
-  .panel-inactive {
-    margin-left: -12%;
-    background-color: #bbb;
-    li { color: #999 !important; }
+  .mask-inactive {
+    width: 20%;
+
+    & .panel {
+      li { color: #999 !important; }
+    }
+
+    & .panel-2 {
+      opacity: .8;
+      margin: 4px 0;
+      padding: 4px 0;
+    }
+
+    & .panel-3 {
+      opacity: .7;
+      margin: 8px 0;
+      padding: 0 0;
+    }
   }
 
-  .panel-active {
+  .mask-active .panel {
     margin-left: 0;
-    // margin-top: -10px;
-    // padding: 10px 0;
-    background-color: #eee;
+    background-color: rgba(255,255,255,0.96);
   }
 }
 
@@ -511,27 +542,36 @@ h6 {
 }
 
 .prompt {
+  transition: color @transition-time ease;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin: 0 -10px;
-  padding: 1em;
-  text-align: center;
-  font-family: @headings-font-family;
+  width: 85%;
+  margin: 100px 0 0;
+  padding: 0;
   font-size: .8em;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  font-style: italic;
   color: @gray;
   z-index: 91;
 
   &:hover {
     text-decoration: none !important;
     color: #fff !important;
+
+    span { opacity: 1; }
+  }
+
+  #pro & { color: @gray-light; }
+
+  span {
+    transition: opacity @transition-time ease;
+    font-size: 1.5em;
+    line-height: 2em;
+    opacity: 0;
+    color: #fff;
   }
 }
 
 .skq-copy-2 {
+  position: relative;
   width: 85%;
   max-width: 400px;
   margin-top: 33vh;
@@ -539,6 +579,12 @@ h6 {
   p {
     margin: 1em 0 1.75em;
     line-height: 1.75em;
+  }
+  .btn {
+    padding-left: 3em; 
+    padding-right: 3em; 
+    position: absolute;
+    z-index: 99;
   }
 }
 

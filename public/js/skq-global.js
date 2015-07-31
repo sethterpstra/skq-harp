@@ -42,6 +42,10 @@ $(document).ready(function() {
         }
     };
 
+    $('#logo-carousel').scrollingCarousel({
+        scrollSpeed: 'slow'
+      });
+
     $('.jump-link').click(function(){
       $('html, body').animate({
           scrollTop: $( $.attr(this, 'href') ).offset().top
