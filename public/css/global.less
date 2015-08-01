@@ -921,14 +921,15 @@ footer{
 // resize chart area for smaller screen HEIGHTS
 @media (max-height:@screen-sm){
   .comparison-chart.fixed-mode {
-    top: 50px;
+    top: 70px;
   }
   .skq-tabs.fixed-mode {
     transition: margin @transition-time ease;
     margin-top: -50px;
   }
-  .skq-copy-2 {
+  .skq-copy-wrapper {
     margin-top: 10vh;
+    .btn { padding: 1em }
   }
 }
 
