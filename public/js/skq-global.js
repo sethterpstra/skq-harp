@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     var body = $('html, body');
-    var mobileBreak = 992
 
     collapseHeader();
 
@@ -53,7 +52,7 @@ $(document).ready(function() {
 
       $('.jump-link').click(function(){
         $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top -100}, 300);
+            scrollTop: $( $.attr(this, 'href') ).offset().top -100}, 400);
         return false;
       });
 

@@ -40,6 +40,11 @@ body{
 
 .skq { height: auto; }
 
+.navbar-default {
+  .navbar-brand:hover,
+  .navbar-brand:focus { color: #000; }
+}
+
 .skq-tagline{
   margin-top: -0.8em;
   padding-left: 20px;
@@ -48,10 +53,9 @@ body{
   font-size: 1.1em;
   line-height: 1.3em;
   color: @gray-light;
-  &:hover { opacity: 1; }
 
   &.default {
-    color: #d2d2d2 !important;
+    color: #b2b2b2 !important;
   }
 
   &.pro,
@@ -93,13 +97,13 @@ body{
     width: 30%;
   }
   .skq {
-    font-size: 25px !important;
+    font-size: 22px !important;
   }
   .skq-header {
     padding: 0 (@grid-gutter-width * 0.75) 0;
   }
-  .navbar-right a {
-    font-size: 0.8em;
+  .navbar-right li a {
+    font-size: 0.5em;
   }
 }
 
@@ -446,6 +450,7 @@ h6 {
 .product {
   padding-top: 40px;
   position: relative;
+  min-height: 580px;
 }
 
 
@@ -473,7 +478,7 @@ h6 {
 
   &.fixed-mode {
     position: fixed;
-    top: 110px;
+    top: 120px;
     left: 0px;
     z-index: 90;
   }
@@ -497,7 +502,7 @@ h6 {
 
   ul li {
     min-height: 30px;
-    padding: 10px 1em 0;
+    padding: 3% 1em 0;
     color: @gray;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -515,9 +520,9 @@ h6 {
   .glyphicon-minus-sign { color: darken(@brand-danger, 10%); }
 
   .key {
-    width: 27.5%;
+    width: 40.5%;
     height: 100%;
-    margin: 0 0 0;
+    margin: 0 -13% 0 0;
     padding: 8px 0;
     list-style: none;
     text-align: right;
@@ -559,7 +564,7 @@ h6 {
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.15);
       &:first-child { 
-        font-size: 1.2em;
+        font-size: 1.1em;
         white-space: nowrap;
       }
     }
@@ -637,9 +642,13 @@ h6 {
     }
   }
 
-  .col-mask.col-inactive:hover { 
-    width: 30% !important; 
-    opacity: .85 !important;
+  .col-inactive.hover { 
+    width: 31% !important; 
+    opacity: .8 !important;
+  }
+
+  .col-inactive.minimize { 
+    width: 9% !important; 
   }
 }
 
@@ -650,7 +659,7 @@ h6 {
 }
 
 .skq-copy-wrapper {
-  margin-top: 30vh;
+  margin-top: 25vh;
   height: 70vh;
   position: relative;
   overflow: hidden;
@@ -666,6 +675,7 @@ h6 {
   max-width: 400px;
   color: lighten(@gray-darker, 10%);
   h4 { font-size: 2em; }
+  h5 { color: #fff; }
   p {
     font-size: 1.2em;
     margin: 1em 0 1.75em;
@@ -697,7 +707,7 @@ h6 {
   transition: color @transition-time ease;
   margin: 40px 0 0;
   padding: 0;
-  font-size: .85em;
+  font-size: 1em;
   font-style: italic;
   color: @gray;
   z-index: 91;
@@ -708,7 +718,7 @@ h6 {
     span { opacity: 1; }
   }
 
-  #pro & { color: @gray-light; }
+  .copy-oss & { color: @brand-primary; }
 
   span {
     transition: opacity @transition-time ease;
@@ -785,81 +795,11 @@ img.icon{
   margin-right: .5em;
 }
 
-@media (max-width:@screen-sm){
-  .comparison-chart,
-  .comparison-chart.fixed-mode {
-    position: static;
-  }
-  .col-sm-8.chart-area {
-    display: none;
-  }
-  .col-sm-4 { width: 100%; }
-  .skq-copy-wrapper {
-    height: auto;
-    margin-top: 0;
-  }
-  .skq-copy-2 {
-    width: 100%;
-    height: 500px;
-    padding: 30px;
-    position: static;
-    opacity: 1;
-    h3 { font-size: 1.7em; }
-    .btn { width: 100%; }
-  }
-  .copy-oss { background-color: @gray-bg; }
-  .copy-pro { background-color: @gray-darker; }
-  .copy-ent { background-color: darken(@brand-primary, 10%); }
-
-  .copy-pro,
-  .copy-ent { color: @gray-lighter; }
-
-  .row.skq-tabs,
-  #oss,
-  #pro,
-  #enterprise { display: none; }
-}
-
-@media (max-width:@screen-xs){
-  .skq-hero-area {
-    padding-top: 20px; 
-    [class*="col-"] {
-      padding: 0 (@grid-gutter-width * 1.5);
-    }
-  }
-  .tab-header {
-    text-align: center;
-  }
-  .skq-hero-text {
-    margin-bottom: @grid-gutter-width;
-    font-size: 1.4em;
-  }
-  [class*="skq-tab"] {
-    height: 55px;
-    .angle-tag { font-size: .5em; }
-    h3 { font-size: .75em; }
-  }
-  [class*="skq-col-"]{
-    min-height: 0;
-  }
-  .logo-carousel li {
-    width: 120px;
-    padding-top: 0;
-  }
-  .skq-support-copy {
-    padding: 0 (@grid-gutter-width / 2)
-  }
-  .product {
-    height: auto !important;
-  }
-}
-
-
 // PRODUCTS
 .purchase {
   position: fixed;
   top: 0;
-  background-color: @gray-darker;
+  background-color: @gray-dark;
   z-index: 2000;
 
   .page-links {
@@ -874,7 +814,7 @@ img.icon{
     a { 
       display: inline-block;
       float: left;
-      padding: 20px;
+      padding: 20px 20px 20px 10px;
       font-size: 20px;
       color: #fff;
       &:hover {
@@ -992,8 +932,84 @@ footer{
   }
 }
 
+// resize for devices narrower than 768px
 @media (max-width:@screen-sm){
+  .comparison-chart,
+  .comparison-chart.fixed-mode {
+    position: static;
+  }
+  .col-sm-8.chart-area {
+    display: none;
+  }
+  .col-sm-4 { width: 100%; }
+  .skq-copy-wrapper {
+    height: auto;
+    margin-top: 0;
+  }
+  .skq-copy-2 {
+    width: 100%;
+    padding: 0 30px 30px;
+    position: static;
+    opacity: 1;
+    h3 { font-size: 1.7em; }
+    .btn { width: 100%; }
+  }
+  .copy-oss { background-color: @gray-bg; }
+  .copy-pro { background-color: @gray-darker; }
+  .copy-ent { background-color: darken(@brand-primary, 10%); }
+
+  .copy-pro,
+  .copy-ent { color: @gray-lighter; }
+
+  .row.skq-tabs,
+  #oss,
+  #pro,
+  #enterprise { display: none; }
+
   .skq-subfooter a {
     margin: 1em 2em 0 2em;
+  }
+  .purchase .page-links {
+    padding: 0;
+    a.btn, {
+      margin: 2%;
+      width: 96%;
+      font-size: 1em;
+    }
+  }
+}
+
+// Resize for devices narrower than 480px 
+@media (max-width:@screen-xs){
+  .skq-hero-area {
+    padding-top: 20px; 
+    [class*="col-"] {
+      padding: 0 (@grid-gutter-width * 1.5);
+    }
+  }
+  .tab-header {
+    text-align: center;
+  }
+  .skq-hero-text {
+    margin-bottom: @grid-gutter-width;
+    font-size: 1.4em;
+  }
+  [class*="skq-tab"] {
+    height: 55px;
+    .angle-tag { font-size: .5em; }
+    h3 { font-size: .75em; }
+  }
+  [class*="skq-col-"]{
+    min-height: 0;
+  }
+  .logo-carousel li {
+    width: 120px;
+    padding-top: 0;
+  }
+  .skq-support-copy {
+    padding: 0 (@grid-gutter-width / 2)
+  }
+  .product {
+    height: auto !important;
   }
 }

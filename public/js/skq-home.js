@@ -50,13 +50,13 @@ $(document).ready(function() {
     var copyHeight = $('.skq-copy-wrapper').height()
 
     if ($(window).width() > mobileBreak) {
-      if(activeOffset < 51) {
+      if(activeOffset < 151) {
         $('.skq-tabs, .tabs-holder, .comparison-chart').addClass('fixed-mode');
         $('.navbar').addClass('navbar-inverse');
         // $('.comparison-chart').addClass('viewing-oss');
       }
 
-      if(pageScroll <= (initialOffset-50)) {
+      if(pageScroll <= (initialOffset+50)) {
         $('.skq-tabs, .tabs-holder, .comparison-chart').removeClass('fixed-mode');
         $('.navbar').removeClass('navbar-inverse');
       }
@@ -105,6 +105,26 @@ $(document).ready(function() {
     }
   }
 
+  function hoverInactive(id) {
+    if ( ($(id).hasClass('col-inactive'))) {
+      $(id).addClass('hover');
+      $(id).siblings('.col-inactive').addClass('minimize');
+    }
+  }
+  function leaveInactive(id) {
+    $(id).removeClass('hover');
+    $(id).siblings('.col-inactive').removeClass('minimize');
+  }
+
+  $('.col-inactive').click(function(){ 
+    $(this).siblings('minimize').removeClass('minimize');
+  });
+
+  $('.chart-area').mouseover(function( event ) {
+    $('.col-inactive').hover(function(){ hoverInactive(this); }, function(){ leaveInactive(this); });
+  });
+
+
   $(document).scrollsnap({
     snaps: '.product',
     proximity: 80,
@@ -119,6 +139,7 @@ $(document).ready(function() {
   $(window).scroll(function(){
     handleChartArea();
     positionChartArea();
+    hoverInactive();
     // console.log(($('.skq-subfooter').offset().top));
     // console.log(document.body.scrollTop);
   });

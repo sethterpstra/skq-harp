@@ -1,0 +1,59 @@
+html
+  body
+    .container
+      h1 Create a Custom Quote
+      p
+        | Enter your company information to get a customized quote for purchasing Sidekiq Enterprise.  You'll get an email with a PDF quote.
+        | Reply to that email with your purchase order or just "OK" and we'll send an invoice which you can pay with either a credit card, ACH
+        | transfer or check.
+      p
+        | Email 
+        a(href='mailto:info@contribsys.com?subject=Sidekiq Enterprise Question') info@contribsys.com
+        |  with further questions.
+      hr
+      .spacer
+      form(name='invoice', action='/cheqout/quoter', method='post')
+        .row
+          .col-md-6
+            .form-group
+              .row
+                .col-md-4
+                  label(for='plan') Process Count *
+                  input.form-control(name='processcount', type='number', min='1', value='1')
+                .col-md-8
+                  p.help-block
+                    | This is the maximum number of Sidekiq Enterprise processes you wish to run in production, sold in packs of 10.
+            .form-group
+              label(for='name') Your Name *
+              input.form-control(type='input', name='yourname', placeholder='Jane Doe', maxlength='64')
+            .form-group
+              label Your Email <small>&mdash; quote will be sent here</small> *
+              input.form-control(type='email', name='youremail', placeholder='someone@acmecorp.com', maxlength='64')
+            .form-group
+              label Billing Email <small>&mdash; yearly invoice will be sent here</small> *
+              input.form-control(type='email', name='billemail', placeholder='billing@acmecorp.com', maxlength='64')
+            .form-group
+              label
+                | Technical Email <small>&mdash; product download details sent here after purchase</small> *
+              input.form-control(type='email', name='techemail', placeholder='engineering@acmecorp.com', maxlength='64')
+          .col-md-6
+            .form-group
+              label Organization Name *
+              input.form-control(type='input', name='orgname', placeholder='Acme Corp', maxlength='64')
+            .form-group
+              label Organization Address *
+              input.form-control(type='input', name='line1', placeholder='123 Fake St', maxlength='64')
+            .form-group
+              input.form-control(type='input', name='line2', placeholder='Suite 200', maxlength='64')
+            .form-group
+              input.form-control(type='input', name='line3', placeholder='Portland OR 97209', maxlength='64')
+            .form-group
+              label Any additional notes to include on quote/invoice?
+              input.form-control(type='input', name='notes', placeholder='For project XYZ', maxlength='64')
+            #disc.form-group(style='display: none')
+              label Discount (%)
+              input.form-control(type='input', name='discount', value='0')
+            p.help-block * Required
+            button.btn.btn-default.btn-primary.btn-lg(type='submit', value='submit') Submit
+      .spacer-md
+!= partial("../_partials/subfooter")  
