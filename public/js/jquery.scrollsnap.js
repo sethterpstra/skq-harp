@@ -123,7 +123,7 @@
                     });
 
                     if ($(window).width() > 992) {
-                        if ( ($('.comparison-chart').hasClass('viewing-oss')) || ($('.comparison-chart').hasClass('viewing-pro')) || ($('.comparison-chart').hasClass('viewing-ent')) ) {
+                        if ( $('.comparison-chart').hasClass('fixed-mode') ) {
 
                             if (matchingEl) {
                                 var $matchingEl = $(matchingEl),

@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
     var body = $('html, body');
+    var mobileBreak = 992
+
     collapseHeader();
 
     function collapseHeader() {
@@ -40,18 +42,20 @@ $(document).ready(function() {
             $(".skq").css({'font-size' : 47});
             $(".skq-tagline").css({'opacity' : 1});
         }
+
+        subNavOffset = $(".skq-header").height()
+        $('.purchase').css({'margin-top' : subNavOffset})
     };
 
     $('#logo-carousel').scrollingCarousel({
         scrollSpeed: 'slow'
       });
 
-    $('.jump-link').click(function(){
-      $('html, body').animate({
-          scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 500);
-      return false;
-    });
+      $('.jump-link').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top -100}, 300);
+        return false;
+      });
 
     $(window).scroll(function(){
         collapseHeader();

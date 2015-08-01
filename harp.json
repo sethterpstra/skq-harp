@@ -5,6 +5,9 @@
     "year": "2015",
     "tagline": "default",
     "taglinecopy": "Simple, efficient background processing for Ruby.",
-    "javascript": "skq-global"
+    "javascript": "skq-global",
+    "ossLink": "#oss",
+    "proLink": "#pro",
+    "entLink": "#enterprise"
   }
 }

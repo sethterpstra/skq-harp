@@ -1,19 +1,14 @@
-#products.container.tab-header
-  .row
-    .col-sm-12
-      h5 Meet the Sidekiq Suite
-
 .row.tabs-holder.no-margin
-.row.skq-tabs.no-margin
+.row.skq-tabs.no-margin(class='#{mode}')
   .col-xs-4.skq-tab-left 
-    a.jump-link(href='#oss')
+    a.jump-link(href='#{ossLink}')
     h3
       img.icon(src="#{baseUrl}/img/octocat.png") 
       | OSS
   .col-xs-4.skq-tab-center
-    a.jump-link(href='#pro')
+    a.jump-link(href='#{proLink}')
     h3 Pro
   .col-xs-4.skq-tab-right
-    a.jump-link(href='#enterprise')
+    a.jump-link(href='#{entLink}')
     h3 Enterprise
     h5.angle-tag New

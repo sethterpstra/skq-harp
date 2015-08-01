@@ -1,4 +1,6 @@
-.container.skq-hero-area
+.row.purchase.no-margin
+  != partial('../_partials/subheader')
+.container.skq-hero-area.product-pg
   .row
     .col-sm-7
       p.skq-hero-text Join <span class="skq-counter-number">100+</span> large companies who have upgraded to Sidekiq Enterprise!
@@ -10,7 +12,7 @@
         | Co-Founder, 
         a(href='http://codeclimate .com/' target='_new') Code Climate
 
-.container.skq-copy
+.container.skq-copy#features
   .spacer
   h5 Key Features
   hr
@@ -71,7 +73,7 @@
       img.skq-copy-img.img-responsive(src='#{baseUrl}/img/support.png')
   .spacer
 
-.container.skq-white-bg
+.container.skq-white-bg#details
   .spacer
   h5 Product Details
   hr
@@ -126,3 +128,4 @@
 .skq-white-bg.no-margin.no-padding
   != partial('../_partials/logo-carousel')
 != partial('../_partials/subfooter')
+!= partial("../_partials/tab-nav")
