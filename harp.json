@@ -1,6 +1,13 @@
 {
   "globals": {
-    "baseUrl": "",
-    "name": "Bootstrap boilerplate for Harp"
+    "baseUrl": ".",
+    "name": "Sidekiq",
+    "year": "2015",
+    "tagline": "default",
+    "taglinecopy": "Simple, efficient background processing for Ruby.",
+    "javascript": "skq-global",
+    "ossLink": "#oss",
+    "proLink": "#pro",
+    "entLink": "#enterprise"
   }
 }

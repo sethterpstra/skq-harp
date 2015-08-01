@@ -1,11 +1,42 @@
-| Powered by
-= ' '
-a(href="https://github.com/jvandemo/hb-bootstrap") hb-bootstrap
-= ' '
-| for
-= ' '
-a(href="http://harpjs.com") Harp
-= ' '
-| by
-= ' '
-a(href="http://www.jvandemo.com") Jurgen Van de Moere
+.container-fluid
+	.row
+		.col-sm-7
+			.skq-footer-brand
+				| Sidekiq
+				a(href='http://rubyheroes.com/' target='_new')
+					img.skq-award(src='#{baseUrl}/img/hero-award.svg')
+				a(href='https://www.blackducksoftware.com/open-source-rookies/2012-recipients' target='_new')
+					img.skq-award(src='#{baseUrl}/img/rookie-award.png')
+		.col-xs-5 
+			a(href='http://contribsys.com/' target='_new')
+				img.skq-footer-logo(src='#{baseUrl}/img/cs-footer-logo.png')
+	hr
+	.row
+		.col-sm-2
+			a(href='https://github.com/mperham/sidekiq/' target='_new') OSS
+			br
+			a(href='#{baseUrl}/products/pro') Pro
+			br
+			a(href='#{baseUrl}/products/enterprise') Enterprise
+		.col-sm-2
+			a(href='https://github.com/mperham/sidekiq/wiki' target='_new') Wiki
+			br
+			a(href='#{baseUrl}/support') Support
+			br
+			a(href='https://github.com/mperham/sidekiq/' target='_new') Source
+		.col-sm-3
+			a(href='#{baseUrl}/about') About
+			br
+			a(href='https://twitter.com/sidekiq' target='_new') On Twitter
+			br
+			a(href='http://confreaks.com/videos/1290-rubyconf2012-asynchronous-processing-for-fun-and-profit' target='_new') At Rubyconf 2012
+		.col-sm-5
+			hr.visible-xs
+			small 
+				| Copyright &copy; 
+				= year 
+				= ' '
+				| Contributed Systems LLC.
+				br.hidden-xs
+				= ' '
+				| Made with care in Portland, OR.

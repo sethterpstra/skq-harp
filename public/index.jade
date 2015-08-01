@@ -1,6 +1,61 @@
-.container
-    .jumbotron
-        h1 Congratulations
-        p Bootstrap boilerplate for Harp is successfully installed.
-        p
-            a.btn.btn-primary.btn-lg(href="#{baseUrl}/docs") View the documentation
+.container.skq-hero-area
+  .row
+    .col-sm-7
+      p.skq-hero-text What if <span class="skq-counter-number">1</span> Sidekiq process could do the job of <span class="skq-counter-number">20</span> Resque or DelayedJob processes?
+    .col-sm-5.rule-left
+      != partial('_partials/quote-carousel')
+  .row
+    .col-sm-12
+      h5 Trusted By
+      hr
+!= partial('_partials/logo-carousel')
+
+#products.container.tab-header
+  .row
+    .col-sm-12
+      h5 Meet the Sidekiq Suite
+!= partial("_partials/tab-nav")  
+
+.comparison-chart.viewing-oss
+  .row
+    .col-sm-8.chart-area
+      != partial("_partials/comparison-chart")
+    .col-sm-4
+      .skq-copy-wrapper
+        .skq-copy-2.copy-oss
+          h4 Interested in trying Sidekiq out on your own project?
+          p Check out the source code and documentation on GitHub to get started.
+          a.btn.btn-primary.btn-lg.btn-white(href='https://github.com/mperham/sidekiq/' target='_new')
+            | Take me to GitHub &emsp;
+            span.glyphicon.glyphicon-new-window
+          a.prompt.hidden-xs.jump-link(href='#pro')
+            | Need functionality built for business?
+            br
+            span.glyphicon.glyphicon-hand-down
+
+        .skq-copy-2.copy-pro
+          h4 Want to unlock advanced Skidekiq functionality?
+          p Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+          a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/pro')
+            | Learn more &amp; Buy &emsp;
+            span.glyphicon.glyphicon-chevron-right
+          a.prompt.hidden-xs.jump-link(href='#enterprise') 
+            | Running a large company?
+            br
+            span.glyphicon.glyphicon-hand-down
+
+        .skq-copy-2.copy-ent
+          h4 Looking to take Sidekiq to the next level?
+          p Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla placerat aliquam wisi.
+          a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/enterprise')
+            | Learn more &amp; Buy
+            | &emsp;
+            span.glyphicon.glyphicon-chevron-right
+
+
+#oss.container.product.no-margin
+#pro.container.product.no-margin
+#enterprise.container.product.no-margin
+
+
+!= partial('_partials/subfooter')

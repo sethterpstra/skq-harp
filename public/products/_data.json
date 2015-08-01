@@ -1,0 +1,27 @@
+{
+  "pro": {
+      "baseUrl": "..",
+      "name": "Sidekiq Pro",
+      "tagline": "pro",
+      "taglinecopy": "Pro",
+      "purchaseUrl": "//plasso.co/s/YSeEjhi5ga",
+      "purchasePrice": "750",
+      "mode": "tall-tabs",
+      "ossLink": "//pro",
+      "proLink": "#pro",
+      "ossLink": "/#oss",
+      "proLink": "/products/pro",
+      "entLink": "/products/enterprise"
+  },
+   "enterprise": {
+      "baseUrl": "..",
+      "tagline": "enterprise",
+      "taglinecopy": "Enterprise",
+      "purchaseUrl": "https://enterprise.contribsys.com/quote.html",
+      "purchasePrice": "1750",
+      "mode": "tall-tabs",
+      "ossLink": "/#oss",
+      "proLink": "/products/pro",
+      "entLink": "/products/enterprise"
+  }
+}
