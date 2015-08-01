@@ -14,46 +14,46 @@
 
 .comparison-chart.hidden-xs
   .row
-    .col-sm-8
+    .col-md-8.chart-area
       != partial("_partials/comparison-chart")
-    .col-sm-4
+    .col-md-4
 
-.products
-  #oss.container.skq-chart-area-1.no-margin
-    .row
-      .col-sm-8
-      .col-sm-4
-        .skq-copy-2
-          h4 Interested in trying Sidekiq out on your own project?
-          p Check out the source code and documentation on GitHub to get started.
-          a.btn.btn-primary.btn-lg(href='https://github.com/mperham/sidekiq/' target='_new')
-            | Take me to GitHub &emsp;
-            span.glyphicon.glyphicon-new-window
-          a.prompt.hidden-xs.jump-link(href='#pro')
-            | Need functionality built for business?
-            br
-            span.glyphicon.glyphicon-hand-down
 
-  #pro.container.skq-chart-area-2.no-margin    
-    .row
-      .col-sm-8
-      .col-sm-4
-        .skq-copy-2
-          h4 Interested in trying Sidekiq out on your own project?
-          p Check out the source code and documentation on GitHub to get started.
-          a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/pro') Learn more &amp; Buy
-          a.prompt.hidden-xs.jump-link(href='#enterprise') 
-            | Running a large company?
-            br
-            span.glyphicon.glyphicon-hand-down
+#oss.container.product.no-margin
+  .row
+    .col-md-8
+    .col-md-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='https://github.com/mperham/sidekiq/' target='_new')
+          | Take me to GitHub &emsp;
+          span.glyphicon.glyphicon-new-window
+        a.prompt.hidden-xs.jump-link(href='#pro')
+          | Need functionality built for business?
+          br
+          span.glyphicon.glyphicon-hand-down
 
-  #enterprise.container.skq-chart-area-3.no-margin
-    .row
-      .col-sm-8
-      .col-sm-4
-        .skq-copy-2
-          h4 Interested in trying Sidekiq out on your own project?
-          p Check out the source code and documentation on GitHub to get started.
-          a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/enterprise') Learn more &amp; Buy
+#pro.container.product.no-margin    
+  .row
+    .col-md-8
+    .col-md-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/pro') Learn more &amp; Buy
+        a.prompt.hidden-xs.jump-link(href='#enterprise') 
+          | Running a large company?
+          br
+          span.glyphicon.glyphicon-hand-down
+
+#enterprise.container.product.no-margin
+  .row
+    .col-md-8
+    .col-md-4
+      .skq-copy-2
+        h4 Interested in trying Sidekiq out on your own project?
+        p Check out the source code and documentation on GitHub to get started.
+        a.btn.btn-primary.btn-lg(href='#{baseUrl}/products/enterprise') Learn more &amp; Buy
 
 != partial('_partials/subfooter')

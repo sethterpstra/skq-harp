@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  $('.products').snapscroll();
-
 	var body = $('html, body');
   var windowHeight = $(window).height()
   var scrollPos = document.body.scrollTop
@@ -16,7 +14,7 @@ $(document).ready(function() {
     var rowCount = $('.key li').length;
     var totalHeight = (chartsHeight / rowCount);
 
-    $('.skq-chart-area-1, .skq-chart-area-2, .skq-chart-area-3').css({'height' : (windowHeight)});
+    $('.product').css({'height' : (windowHeight)});
     $('.comparison-chart').css({'height' : (windowHeight-120)});
     $('.mask-inactive .panel').css({'width' : chartWidth});
     $('.panel li').css({'height' : totalHeight});
@@ -72,25 +70,58 @@ $(document).ready(function() {
 
   function handleChartArea() {
     if (((document.body.scrollTop)+windowHeight) >= (subFooterOffset)) { 
-      $('.comparison-chart').css({'margin-top' : (-(((document.body.scrollTop)+windowHeight)-(subFooterOffset)))});
+      $('.comparison-chart').css({'margin-top' : ( -(((document.body.scrollTop) + windowHeight)-subFooterOffset) ) });
     } else {
       $('.comparison-chart').css({'margin-top' : 0});
     }
     // console.log(((document.body.scrollTop)+windowHeight));
     // console.log((subFooterOffset));
+
+    if ( $('body').hasClass('viewing-pro') ) {
+
+      $('.oss .panel').removeClass('panel-1').addClass('panel-2');
+      $('.pro .panel').removeClass('.panel-2').addClass('panel-1');
+      $('.ent .panel').addClass('panel-2').removeClass('.panel-3');
+
+    }
   }
 
+  $(document).scrollsnap({
+    snaps: '.product',
+    proximity: (windowHeight/3),
+    duration: 500,
+    latency: 200
+  });
 
-  // $('.panel-2').mouseover(function(){
-  //   $(this).closest('mask-active').removeClass('mask-active');
-  //   $(this).parent().removeClass('mask-inactive');
-  //   $(this).parent().addClass('mask-active');
+  // $('.oss').mouseover(function(){
+  //   $(this).addClass('panel-focus');
+  //   $(this).siblings('.mask-inactive').addClass('panel-minimize');
   // });
 
-  // $('.panel-2').mouseout(function(){
-  //   $(this).parent().removeClass('mask-active');
-  //   $(this).parent().addClass('mask-inactive');
+  // $('.oss').mouseout(function(){
+  //   $(this).removeClass('panel-focus');
+  //   $(this).siblings('.mask-inactive').removeClass('panel-minimize');
   // });
+
+  $('.pro').mouseover(function(){
+    $(this).addClass('panel-focus');
+    $(this).siblings('.mask-inactive').addClass('panel-minimize');
+  });
+
+  $('.pro').mouseout(function(){
+    $(this).removeClass('panel-focus');
+    $(this).siblings('.mask-inactive').removeClass('panel-minimize');
+  });
+
+  $('.ent').mouseover(function(){
+    $(this).addClass('panel-focus');
+    $(this).siblings('.mask-inactive').addClass('panel-minimize');
+  });
+
+  $('.ent').mouseout(function(){
+    $(this).removeClass('panel-focus');
+    $(this).siblings('.mask-inactive').removeClass('panel-minimize');
+  });
 
   $(window).scroll(function(){
     dockTabNav();

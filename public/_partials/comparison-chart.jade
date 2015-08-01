@@ -1,5 +1,6 @@
 .charts-wrapper
-  .panel-mask.mask-inactive
+  .ent.panel-mask.mask-inactive
+    a.col-link.jump-link(href='#enterprise')
     ul.panel.panel-3
       li Med-Lg Companies
       li 
@@ -24,12 +25,19 @@
         span.glyphicon.glyphicon-ok-sign     
       li
         span.glyphicon.glyphicon-ok-sign              
-      li Email, RFC-1149
-      li Commercial
-      li $1750 / yr / 10 processes
-      li Credit, Invoice
+      li Email, Onboarding Session
+      li
+        | Commercial
+        br
+        | with Custom Terms
+        li 
+          | $1750 / year
+          br
+          | per 250 Worker Threads*
+      li Quote + Invoice
 
-  .panel-mask.mask-inactive
+  .pro.panel-mask.mask-inactive
+    a.col-link.jump-link(href='#pro')
     ul.panel.panel-2
       li Small Business
       li 
@@ -55,11 +63,18 @@
       li
         span.glyphicon.glyphicon-minus-sign              
       li Email
-      li Commercial
-      li $950 / yr
+      li
+        | Commercial
+        br
+        | No Custom Terms
+      li 
+        | $950 / year
+        br
+        | Unlimited Usage
       li Credit Card
   
-  .panel-mask.mask-active
+  .oss.panel-mask.mask-active
+    a.col-link.jump-link(href='#oss')
     ul.panel.panel-1
       li Hobbyists
       li 
