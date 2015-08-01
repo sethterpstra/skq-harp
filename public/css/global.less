@@ -9,7 +9,7 @@
 //
 // --------------------------------------------------
 
-// Import flat bootstrap theme
+// Import bootstrap theme
 @import "themes/skq/theme";
 
 @max-width: 1800px;
@@ -390,7 +390,7 @@ h6 {
   transition: background-color @transition-time ease;
   background-color: @gray-bg;
 
-  // Fade transition
+  // background fade-through transition
   // .viewing-oss & { background-color: #aaa; }
   // .viewing-pro & { background-color: @gray-darker; }
   // .viewing-ent & { background-color: darken(@brand-primary, 10%); }
@@ -427,6 +427,8 @@ h6 {
   position: relative;
 }
 
+
+// chart styling begin //
 .chart-area {
   padding-left: 0;
 }
@@ -440,9 +442,11 @@ h6 {
 
 .comparison-chart {
   position: absolute;
+  display: flex;
+  align-items: center;
   left: 0px;
   width: 100%;
-  padding: 30px 0 0;
+  padding: 0;
   z-index: 1;
 
   &.fixed-mode {
@@ -453,6 +457,7 @@ h6 {
   }
 
   .row { 
+    width: 100%;
     max-width: @max-width;
     margin: 0 auto;
   }
@@ -466,125 +471,149 @@ h6 {
     z-index: 10;
   }
 
-  ul { float: right; }
+  ul li {
+    min-height: 30px;
+    padding: 10px 1em 0;
+    color: @gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color @transition-time ease;
+  }
+
   ul li:first-child { border-bottom-width: 2px !important; }
   ul li:last-child { border-bottom: 0 !important; }
   ul li:nth-child(14),
   ul li:nth-child(15) { min-height: 55px !important; }
 
-  ul li:first-child {
-    .oss & { border-top: 4px solid #888; }
-    .pro & { border-top: 4px solid #444; }
-    .ent & { border-top: 4px solid @brand-primary !important; }
-  }
-
   .glyphicon-ok-sign { color: darken(@brand-success, 10%) }
   .glyphicon-minus-sign { color: darken(@brand-danger, 10%) }
 
-  .key,
-  [class*=panel-] {
+  .key {
+    width: 27.5%;
+    height: 100%;
     margin: 0 0 0;
-    padding: 0;
+    padding: 8px 0;
     list-style: none;
     text-align: right;
     text-transform: uppercase;
     font-family: @headings-font-family;
     font-size: .75em;
     letter-spacing: .1em;
-    transition: background-color @transition-time ease;
 
     li {
-      min-height: 30px;
-      padding: 10px 1em 0;
       border-bottom: 1px solid rgba(255,255,255,0.15);
       white-space: nowrap;
-      color: @gray;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transition: color @transition-time ease;
     }
   }
 
-  .key {
-    width: 27.5%;
-    height: 100%;
-    padding: 8px 0;
-    li { 
-      padding-right: 1.25em;
-      .viewing-pro &,
-      .viewing-ent & { color: @gray-lighter; }
-    }
-  }
-
-  .panel {
-    transition: opacity 200ms ease;
-  }
-
-  [class*=panel-] {
+  .list {
+    float: right;
     width: 100%;
-  }
-
-  .panel-1,
-  .panel-2,
-  .panel-3 {
+    height: 100%;
     text-transform: none;
     letter-spacing: 0;
-    font-size: 1.2em;
+    font-family: @headings-font-family;
+    font-size: 1em;
     margin: 0 0 0 0;
-    padding: 8px 0;
+    padding: 0;
     border-radius: 4px;
     border: none;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    background-color: #fff;
 
     li { 
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.15);
+
+      // .viewing-pro &,
+      // .viewing-ent & {
+      //   color: @gray-lighter !important;
+      // }
+
+      &:first-child { font-size: 1.2em; }
     }
-    li:first-child { font-size: 1.2em; }
   }
 
-  .panel-mask {
-    position: relative;
-    padding-right: 5px;
-    margin-left: -5px;
-    overflow-x: hidden;
-    overflow-y: visible;
+  .col-mask {
     width: 32%;
     float: right;
-    transition: width @transition-time;
-    transition-delay: 100ms;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    // transition: all @transition-time ease;
+    // transition-delay: 100ms;
 
-    &.panel-focus { 
+    &.list-focus { 
       width: 31%; 
 
-      & .panel { opacity: .85; }
+      &.list { opacity: .85; }
     }
-    &.panel-minimize { width: 9%; }
+    &.list-minimize { width: 9%; }
   }
 
-  .mask-inactive {
+  .list-featured {
+    padding: 0px 0;
+    .list { padding: 8px 0; }
+  }
+
+  .list-second {
+    opacity: .6;
+    padding: 4px 0;
+    .list { padding: 4px 0; }
+  }
+
+  .list-third {
+    opacity: .4;
+    padding: 8px 0;
+    color: #999 !important;
+    .list { padding: 0px 0; }
+  }
+
+  .list-second,
+  .list-third {
     width: 20%;
-
-    & .panel {
-      li { color: #999 !important; }
-    }
-
-    & .panel-2 {
-      opacity: .6;
-      margin: 4px 0;
-      padding: 4px 0;
-    }
-
-    & .panel-3 {
-      opacity: .4;
-      margin: 8px 0;
-      padding: 0 0;
-    }
+    color: #999 !important;
   }
 
-  .mask-active .panel {
-    margin-left: 0;
-    background-color: #fff;
+  &.viewing-oss { 
+    .col-oss { 
+      .list-featured;
+      & .list { float: left; }
+    }
+    .col-pro { .list-second; }
+    .col-ent { .list-third; }
+  }
+
+  &.viewing-pro { 
+    .col-oss { .list-second; }
+    .col-pro { 
+      .list-featured;
+      & .list { float: left; }
+    }
+    .col-ent { .list-second; }
+  }
+
+  &.viewing-ent { 
+    .col-oss { .list-third; }
+    .col-pro { .list-second; }
+    .col-ent { .list-featured; }
+  }
+
+  &.viewing-pro,
+  &.viewing-ent {
+    .col-key { color: @gray-lighter; }
+    .col-oss .list,
+    .col-pro .list { float: left !important; }
+  }
+
+  &.viewing-oss,
+  &.viewing-pro,
+  &.viewing-ent {
+    &.fixed-mode {
+      .col-mask,
+      .list {
+        transition: all @transition-time ease;
+      }
+    }
   }
 }
 
@@ -617,6 +646,8 @@ h6 {
     color: #ccc;
   }
 }
+// chart styling end //
+
 
 .skq-copy-2 {
   position: relative;
@@ -756,6 +787,7 @@ img.icon{
   background-color: #ddd;
   border: none;
   padding-top: (@grid-gutter-width * 1.5);
+  padding-bottom: (@grid-gutter-width * 1.5);
   margin: 0;
   background-image: none;
 
@@ -772,7 +804,7 @@ img.icon{
 footer{
   .skq-header;
   padding-top:   (@grid-gutter-width * 1.5);
-  padding-bottom:(@grid-gutter-width * 1.5);
+  padding-bottom:(@grid-gutter-width * 3);
   margin: 0;
   border-top: 1px solid @well-border;
   text-align: left;
