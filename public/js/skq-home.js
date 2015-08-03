@@ -6,9 +6,9 @@ $(document).ready(function() {
   var mobileBreak = 992
 
 	// $(body).scrollTop(0);
-	sizeChartArea();
-  handleChartArea();
-  positionChartArea();
+	// sizeChartArea();
+  // handleChartArea();
+  // positionChartArea();
   setCarouselHeight('#carousel');
 
   function sizeChartArea() {    
@@ -124,29 +124,21 @@ $(document).ready(function() {
     $('.col-inactive').hover(function(){ hoverInactive(this); }, function(){ leaveInactive(this); });
   });
 
-
-  $(document).scrollsnap({
-    snaps: '.product',
-    proximity: 80,
-    duration: 200,
-    latency: 250
-  });
-
   $('.charts-wrapper').mouseover(function(){
-    sizeChartArea();
+    // sizeChartArea();
   });
 
   $(window).scroll(function(){
-    handleChartArea();
-    positionChartArea();
+    // handleChartArea();
+    // positionChartArea();
     hoverInactive();
     // console.log(($('.skq-subfooter').offset().top));
     // console.log(document.body.scrollTop);
   });
 
   $(window).resize(function(){
-    sizeChartArea();
-    positionChartArea();
+    // sizeChartArea();
+    // positionChartArea();
   });
 
 });

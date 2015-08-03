@@ -205,7 +205,7 @@ body,
 }
 
 .spacer {
-  float: left;
+  .clearfix;
   width: 100%;
   margin: (@grid-gutter-width * 1.25) 0;
 }
@@ -379,8 +379,7 @@ h6 {
   overflow: hidden;
   height: 70px;
   h3 { font-size: 1.4em; }
-  img { 
-    opacity: 0.5;
+  img {
     margin-top: -5px;
   }
   a {
@@ -455,100 +454,51 @@ h6 {
 
 
 // chart styling begin //
-.chart-area {
-  padding-left: 0;
-}
-
-.charts-wrapper {
-  width: 95%;
-  height: 77vh;
-  min-height: 580px;
-  padding-left: 30px;
-  transition: width @transition-time ease;
-}
 
 .comparison-chart {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 0px;
+  display: block;
+  height: 100%;
   width: 100%;
-  padding: 0;
+  padding: @grid-gutter-width;
   z-index: 1;
 
-  &.fixed-mode {
-    position: fixed;
-    top: 120px;
-    left: 0px;
-    z-index: 90;
-  }
+  // &.fixed-mode {
+  //   position: fixed;
+  //   top: 120px;
+  //   left: 0px;
+  //   z-index: 90;
+  // }
 
   .row { 
     width: 100%;
     max-width: @max-width;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-  }
-
-  .section-link { 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
   }
 
   ul li {
-    min-height: 30px;
-    padding: 3% 1em 0;
-    color: @gray;
+    height: 45px;
+    padding: 12px 8px 0;
+    color: @gray-dark;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: color @transition-time ease;
 
-    small { color: lighten(@gray, 30%) }
+    small { color: @gray-light }
   }
 
   ul li:first-child { border-bottom-width: 2px !important; }
   ul li:last-child { border-bottom: 0 !important; }
+  ul li:nth-child(13),
   ul li:nth-child(14),
-  ul li:nth-child(15) { min-height: 55px !important; }
+  ul li:nth-child(15) { height: 65px !important; }
+  ul li:nth-child(17) { height: 80px !important; }
 
   .glyphicon-ok-sign { color: darken(@brand-success, 10%) }
   .glyphicon-minus-sign { color: darken(@brand-danger, 10%); }
 
-  .key {
-    width: 40.5%;
-    height: 100%;
-    margin: 0 -13% 0 0;
-    padding: 8px 0;
-    list-style: none;
-    text-align: right;
-    text-transform: uppercase;
-    font-family: @headings-font-family;
-    font-size: .75em;
-    letter-spacing: .1em; 
-
-    li {
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      white-space: nowrap;
-    }
-  }
-
-  .col-mask {
-    width: 32%;
-    float: right;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
-    transition: width @transition-time, opacity @transition-time;
-  }
-
-  .list {
-    float: right;
-    width: 100%;
+  ul.product {
+    float: left;
+    width: 33%;
     height: 100%;
     text-transform: none;
     letter-spacing: 0;
@@ -556,106 +506,48 @@ h6 {
     font-size: .95em;
     margin: 0 0 0 0;
     padding: 0;
-    border-radius: 4px;
+    // border-radius: 4px;
     border: none;
-    background-color: #fff;
+    // background-color: #fff;
 
     li { 
-      text-align: center;
+      // text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.15);
-      &:first-child { 
-        font-size: 1.1em;
-        white-space: nowrap;
+      .btn-primary {
+        margin: 0;
+        padding: 1.5em .5em;
+        width: 100%;
+        font-size: .85em;
+      }
+      .btn-black { 
+        background-color: @gray-dark;
+        border-color: @gray-dark;
+        &:hover { background-color: #111; }
+      }
+
+      .btn-white {
+        border: 1px solid #ddd;
+        :hover { background-color: #aaa; }
       }
     }
   }
 
-  .list-featured {
-    padding: 0px 0;
-    .list { padding: 8px 0; }
-  }
+  ul.key {
+    height: 100%;
+    margin: 2px 5px 0 0;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: @headings-font-family;
+    font-size: .75em;
+    letter-spacing: .1em; 
 
-  .list-second {
-    opacity: .6;
-    padding: 4px 0;
-    .list { padding: 4px 0; }
-  }
-
-  .list-third {
-    opacity: .4;
-    padding: 8px 0;
-    .list { padding: 0px 0; }
-  }
-
-  .list-second,
-  .list-third {
-    width: 20% !important;
-    color: #999 !important;
-  }
-
-  &.viewing-oss { 
-    .col-oss { 
-      .list-featured;
-      & .list { float: left; }
-    }
-    .col-pro { .list-second; }
-    .col-ent { .list-third; }
-  }
-
-  &.viewing-pro { 
-    .col-oss { 
-      .list-second;
-      & .list { float: left; }
-    }
-    .col-pro { 
-      .list-featured;
-      & .list { float: right; }
-    }
-    .col-ent { .list-second; }
-  }
-
-  &.viewing-ent { 
-    .col-oss { 
-      .list-third;
-      & .list { float: left; }
-    }
-    .col-pro { 
-      .list-second;
-      & .list { float: left; }
-    }
-    .col-ent { .list-featured; }
-  }
-
-  &.viewing-pro,
-  &.viewing-ent {
-    .key li { color: @gray-lighter; }
-  }
-
-  &.viewing-oss,
-  &.viewing-pro,
-  &.viewing-ent {
-    &.fixed-mode {
-      .col-mask,
-      .list {
-        transition: all @transition-time ease;
-      }
+    li {
+      text-align: right;  
+      white-space: nowrap;
+      color: @gray-light;
     }
   }
-
-  .col-inactive.hover { 
-    width: 31% !important; 
-    opacity: .8 !important;
-  }
-
-  .col-inactive.minimize { 
-    width: 9% !important; 
-  }
-}
-
-.width-reference {
-  display: block;
-  height: 0;
-  width: 32%;
 }
 
 .skq-copy-wrapper {
@@ -689,9 +581,6 @@ h6 {
     color: #fff;
     p { color: rgba(255, 255, 255, 0.4); }
   }
-  .btn {
-    width: 90%;
-  }
 
   .viewing-oss &.copy-oss,
   .viewing-pro &.copy-pro,
@@ -700,35 +589,6 @@ h6 {
     z-index: 1;
   }
 }
-
-.prompt {
-  display: block;
-  float: left;
-  transition: color @transition-time ease;
-  margin: 40px 0 0;
-  padding: 0;
-  font-size: 1em;
-  font-style: italic;
-  color: @gray;
-  z-index: 91;
-
-  &:hover {
-    text-decoration: none !important;
-    color: #fff !important;
-    span { opacity: 1; }
-  }
-
-  .copy-oss & { color: @brand-primary; }
-
-  span {
-    transition: opacity @transition-time ease;
-    font-size: 1.5em;
-    line-height: 2.5em;
-    opacity: 0;
-    color: #ccc;
-  }
-}
-
 
 .skq-copy {
   padding: 0 (@grid-gutter-width * 1.5);
@@ -947,20 +807,6 @@ footer{
     height: auto;
     margin-top: 0;
   }
-  .skq-copy-2 {
-    width: 100%;
-    padding: 0 30px 30px;
-    position: static;
-    opacity: 1;
-    h3 { font-size: 1.7em; }
-    .btn { width: 100%; }
-  }
-  .copy-oss { background-color: @gray-bg; }
-  .copy-pro { background-color: @gray-darker; }
-  .copy-ent { background-color: darken(@brand-primary, 10%); }
-
-  .copy-pro,
-  .copy-ent { color: @gray-lighter; }
 
   .row.skq-tabs,
   #oss,
