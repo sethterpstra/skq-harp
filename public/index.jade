@@ -10,35 +10,7 @@
       hr
 != partial('_partials/logo-carousel')
 
-#products.container.tab-header
-  .row
-    .col-sm-3
-      h5 Meet the Sidekiq Suite
-    .col-sm-9
-      != partial("_partials/tab-nav")  
-
-.comparison-chart.viewing-oss
-  .row
-    .col-sm-3
-      ul.key
-        li Audience
-        li Scheduled Jobs
-        li Error Handling
-        li Web UI
-        li Ruby API
-        li Middleware
-        li Batches
-        li Enhanced Reliability
-        li Search in Web UI
-        li Rate Limiting
-        li Cron Jobs
-        li Leader Election
-        li Dedicated Support
-        li License
-        li Pricing
-        li Purchasing
-    .col-sm-9
-      != partial("_partials/comparison-chart")
-  .spacer
-
+#products.container
+  != partial("_partials/comparison-chart")
+  .spacer-md
 != partial('_partials/subfooter')

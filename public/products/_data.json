@@ -6,10 +6,7 @@
       "taglinecopy": "Pro",
       "purchaseUrl": "//plasso.co/s/YSeEjhi5ga",
       "purchasePrice": "750",
-      "mode": "tall-tabs",
-      "ossLink": "../#oss",
-      "proLink": "pro.html",
-      "entLink": "enterprise.html"
+      "mode": "tall-tabs"
   },
    "enterprise": {
       "baseUrl": "..",
@@ -17,10 +14,7 @@
       "taglinecopy": "Enterprise",
       "purchaseUrl": "quote.html",
       "purchasePrice": "1750",
-      "mode": "tall-tabs",
-      "ossLink": "../#oss",
-      "proLink": "pro.html",
-      "entLink": "enterprise.html"
+      "mode": "tall-tabs"
   },
    "quote": {
       "baseUrl": "..",
