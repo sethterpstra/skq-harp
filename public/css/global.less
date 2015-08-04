@@ -669,14 +669,14 @@ footer{
   .container-fluid { max-width: @max-width; }
 
   hr{
-    border-color: lighten(@gray-dark, 9%);
+    border-color: lighten(@gray-darker, 15%);
     margin-top: .75em;
   }
 
   a{
     font-family: @headings-font-family;
     line-height: 2em;
-    color: @gray-dark;
+    color: @gray-darker;
 
     &:hover{ 
       color: @gray-light;
@@ -692,7 +692,7 @@ footer{
     margin-left: .5em;
     font-size: 1.8em;
     font-family: @font-family-base;
-    color: @gray-dark;
+    color: @gray-darker;
   }
 
   .skq-footer-logo{
@@ -720,6 +720,9 @@ footer{
 
 // resize for devices narrower than 768px
 @media (max-width:@screen-sm){
+  .logo-carousel {
+    margin-bottom: 2em;
+  }
   #products,
   .comparison-chart {
     padding: 0;
@@ -730,18 +733,22 @@ footer{
     overflow-y: hidden;
   }
   .charts-wrapper {
-    width: 1100px;
-    ul.product { width: 280px; }
+    width: 1050px;
+    ul.product { width: 170px; }
+    ul.col-ent { width: 210px; }
   }
-  .col-oss { margin-left: 210px !important; }
+  .col-oss { margin-left: 110px !important; }
   .key-wrapper {
     position: absolute;
     display: block;
     float: left;
     z-index: 9;
+    width: 110px;
     height: 100%;
     background-color: rgba(255,255,255,0.9);
     box-shadow: 1px 0 2px rgba(0,0,0,0.15);
+    font-size: .7em;
+    ul.key li { white-space: normal; }
   }
   .col-sm-4 { width: 100%; }
   .skq-copy-wrapper {
@@ -774,6 +781,7 @@ footer{
       padding: 0 (@grid-gutter-width * 1.5);
     }
   }
+  .skq-hero-area.product-pg { padding-top: 100px; }
   .skq-hero-text {
     margin-bottom: @grid-gutter-width;
     font-size: 1.4em;
